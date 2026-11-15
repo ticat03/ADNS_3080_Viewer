@@ -13,8 +13,9 @@ pkg_check_modules(LIBSERIALPORT REQUIRED IMPORTED_TARGET libserialport)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-add_executable(ADNS_3080_Viewer src/main.cpp)
+add_executable(ADNS_3080_Viewer src/main.cpp src/Image.cpp)
 
+target_include_directories(ADNS_3080_Viewer PRIVATE include)
 target_compile_definitions(ADNS_3080_Viewer PRIVATE ASIO_STANDALONE)
 target_link_libraries(ADNS_3080_Viewer PRIVATE ${OpenCV_LIBS})
 target_link_libraries(ADNS_3080_Viewer PRIVATE PkgConfig::LIBSERIALPORT)
