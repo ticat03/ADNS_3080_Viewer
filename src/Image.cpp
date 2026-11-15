@@ -84,7 +84,7 @@ bool Image::start_serial() {
     }
 
     // Show standby image
-    cv::Mat standby_img = cv::imread(std::string(ASSET_DIR) + "/docs/standby.jpeg", cv::IMREAD_GRAYSCALE);
+    cv::Mat standby_img = cv::imread(std::string(ASSET_DIR) + "/standby.jpeg", cv::IMREAD_GRAYSCALE);
     print_image_and_check_input(standby_img);
 
     return false;
